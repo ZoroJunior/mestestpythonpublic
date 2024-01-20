@@ -1,3 +1,5 @@
+import math
+import time
 
 #chapitre 4 5 : LISTES ET BOUCLES****************************************************************************************
 
@@ -255,3 +257,264 @@
 # for animal in animaux2:
 #     filout.write(animal+"\n")
 # print(filout)
+
+
+#exercice 4
+
+# import math
+# rayon = 4
+# theta = 0
+#
+# with open("spirale.dat","w+") as fichier :
+#     while theta != 2*math.pi :
+#         fichier.write("{:<10.5f} {:<10.5f} \n ".format(rayon*math.sin(theta), rayon*math.cos(theta)))
+#         theta = theta + 0.1*math.pi
+#
+# #rayon changeant
+#
+# import math
+#
+# rayon = 0
+# theta = 0
+#
+# with open("spirale.dat", "w+") as fichier:
+#     while theta != 2 * math.pi or rayon != 10:
+#         fichier.write("{:<10.5f} {:<10.5f} \n ".format(rayon * math.sin(theta), rayon * math.cos(theta)))
+#         theta = theta + 0.1 * math.pi
+#         rayon = rayon + 0.5
+#
+
+
+#chapitre 8 :  MODULES
+
+#exercice 1
+
+#afficher les premiers nombres avec leurs racines
+
+# import math
+#
+# for  i in range(10,20) :
+#     print("La racine de {:<2} est : {:0<10.10f}".format(i,math.sqrt(i)))
+# print("les modules c'est trop bien !!!!")
+
+#exercice 2
+
+# calcul de cosinus
+# import math
+# print("le cosinus de pi/2 est {:2f}".format(math.cos(math.pi/2)))
+
+#exercice 3
+
+# liste des fichiers dans un repertoire
+
+# import os
+# ch = os.listdir("/home/billjunior/PycharmProjects/exospython")
+# print(ch)
+
+#exercice 4
+
+#affichage temporisé
+# import time
+# for i in range(10) :
+#     print(i)
+#     time.sleep(1)
+
+#exercice 5
+
+#sequence aleatoire de chiffres
+
+# import random
+#
+# print(random.randint(0,4))
+
+#exercice 6
+
+#sequences aleatoires de base
+
+#determination du nombre pi
+
+# import random
+# import math
+# n = 0
+# for i in range(100) :
+#     x = random.uniform(0,1)
+#     y = random.uniform(0,1)
+#     r = x*x+y*y
+#     r =math.sqrt(r)
+#     if r<= 1 :
+#         n = n + 1
+#
+# print("la valeur de pi est de : {}".format(4*n/100))
+
+
+
+#chapitre 9 : FONCTIONS
+
+#exercice 1
+
+
+#exercice 2
+
+#fonction puissance
+
+# def puissance(x,y):
+#     z = 1
+#     for i in range(y) :
+#         z = x*z
+#     return z
+#
+# nombre1 = float(input("enter un nombre !!!  "))
+# nombre2 = int(input("enter la puissance !!!  "))
+# print("la puissance de {} ^ {} est {}".format(nombre1,nombre2,puissance(nombre1,nombre2)))
+
+#exercice 3
+
+#fonction pyramide
+
+# def pyramide_gen(p) :
+#     s = "*"
+#     for i in range(2*p) :
+#         if i%2 == 0 :
+#             print("{:^100}".format(s*i))
+#
+# p = int(input("entrer un nombre !!! "))
+# pyramide_gen(p)
+
+#exercice 4
+
+#nombre premier
+
+# def is_prime(n) :
+#     for i in range(2,n) :
+#         if n%i == 0 :
+#             return False
+#     return True
+#
+# for i in range(2,100) :
+#     if is_prime(i) :
+#         print("[ {:<2} ] est un nombre premeir".format(i))
+#     else :
+#         print("[ {:<2} ] n'est pas un nombre premeir".format(i))
+
+#exercice 5
+
+#fonctionnement complet
+
+# def complement(t) :
+#     c = []
+#     for i in range(len(t)) :
+#         c.append(t[len(t) - i - 1])
+#     return c
+#
+# seq = ['A', 'T', 'C', 'G', 'A','T', 'C', 'G', 'A', 'T', 'C', 'G', 'C', 'T', 'G', 'C', 'T', 'A', 'G', 'C']
+# print(seq)
+# print(complement(seq))
+
+#exercice 6
+
+#distance entre deux points
+
+# import math
+# def cal_distance3D(a,b) :
+#     d = 0
+#     for i in range(3) :
+#         d = d + (a[i] - b[i])*(a[i] - b[i])
+#     return math.sqrt(d)
+#
+# a = [0,0,0]
+# b = [1,1,1]
+#
+# print("la distance entre nos deux poits est : {}".format(cal_distance3D(a,b)))
+# print("la racine de 3 est de : ",math.sqrt(3))
+
+#exercice 7
+
+#fonction distribution et stat
+
+# import random
+# import math
+#
+# def moyenne(t) :
+#     m = 0
+#     for i in range(len(t)) :
+#         m = t[i]/len(t) + m
+#     return m
+#
+# def gen_distrib(n) :
+#     liste = []
+#     for i in range(n) :
+#         liste.append(random.randint(1,100))
+#     return liste
+#
+# def calc_stat(liste) :
+#     ls = []
+#     ls.append(min(liste))
+#     ls.append(max(liste))
+#     ls.append(liste[len(liste)//2])
+#     ls.append(moyenne(liste))
+#     return  ls
+#
+# for i in range(20) :
+#     ls = calc_stat(gen_distrib(100))
+#     print("Liste {:<5} minimum : {:<5} maximum : {:<5} mediane : {:<5} moyenne {:<5} ".format(i,ls[0],ls[1],ls[2],ls[3]))
+
+
+#exercice 8
+
+# Fonction distance à l'origine
+
+# import math
+#
+# def cal_distance2D(b,a = [0,0]) :
+#     d = 0
+#     for i in range(2) :
+#         d = d + (a[i] - b[i])*(a[i] - b[i])
+#     return math.sqrt(d)
+#
+# def calc_dist2ori(listex,listey) :
+#     liste = []
+#     for i in range(len(listex)) :
+#         liste.append(cal_distance2D([listex[i],listey[i]]))
+#     return liste
+#
+# x = - math.pi
+# lsx = []
+# lsy = []
+#
+# while x <= math.pi :
+#     lsx.append(x)
+#     lsy.append(math.sin(x))
+#     x = x + 0.1
+#
+# L = calc_dist2ori(lsx,lsy)
+#
+# with open("sin2ori.dat","w+") as fic :
+#     for i in range(len(L)) :
+#         fic.write("{:<8.3f} {:>8.3f} \n".format(lsx[i],L[i]))
+
+
+#exrecice 9
+
+#calcul d'aire methode des triangles
+
+# import math
+#
+# def calc_aire(lsx,lsy) :
+#     a = []
+#     for i in range(len(lsx)) :
+#         a.append(abs(lsx[i])*abs(lsy[i]))
+#     return a
+#
+# x = - math.pi
+#
+# lsx = []
+# lsy = []
+#
+# while x <= math.pi :
+#     lsx.append(x)
+#     lsy.append(math.sin(x))
+#     x = x + 0.1
+#
+# liste = calc_aire(lsx,lsy)
+#
+# print("l'aire de la fonction sinus dans -pi , pi est de : {}".format(sum(liste)))
