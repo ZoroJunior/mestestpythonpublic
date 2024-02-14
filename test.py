@@ -1,6 +1,8 @@
 import math
 import time
 
+# utf-coding 
+
 #chapitre 4 5 : LISTES ET BOUCLES****************************************************************************************
 
  # liste = ["lundi","mardi","mercredi","jeudi",'vendredi','samedi',]
@@ -327,16 +329,16 @@ import time
 #
 # print(random.randint(0,4))
 
-#exercice 6
-
-#sequences aleatoires de base
-
-#determination du nombre pi
+# exercice 6
+#
+# sequences aleatoires de base
+#
+# determination du nombre pi
 
 # import random
 # import math
 # n = 0
-# for i in range(100) :
+# for i in range(100000000) :
 #     x = random.uniform(0,1)
 #     y = random.uniform(0,1)
 #     r = x*x+y*y
@@ -344,7 +346,8 @@ import time
 #     if r<= 1 :
 #         n = n + 1
 #
-# print("la valeur de pi est de : {}".format(4*n/100))
+# print("la valeur de pi est de : {}".format(4*n/100000000))
+# print("la vraie valeur de pi est de {}".format(math.pi))
 
 
 
@@ -483,7 +486,7 @@ import time
 #
 # while x <= math.pi :
 #     lsx.append(x)
-#     lsy.append(math.sin(x))
+#     lsy.append(math.sin(x))xer
 #     x = x + 0.1
 #
 # L = calc_dist2ori(lsx,lsy)
@@ -518,3 +521,255 @@ import time
 # liste = calc_aire(lsx,lsy)
 #
 # print("l'aire de la fonction sinus dans -pi , pi est de : {}".format(sum(liste)))
+
+
+
+#chapitre 10 : PLUS SUR LES CHAINES DE CARACTÈRE
+
+#exercice 1
+
+#Parcours d'une liste
+
+# animaux = ['girafe', 'tigre', 'singe', 'souris']
+#
+# for animal in animaux :
+#     print("l' animal {:<6s} a {}  caractères ".format(animal,len(animal)))
+
+
+#exercice 2
+
+#Fréquence des bases dans une séquence nucléique
+
+# def calc_composition(chaine) :
+#     return chaine.count("A")/len(chaine),chaine.count("C")/len(chaine),chaine.count("G")/len(chaine),chaine.count("T")/len(chaine)
+#
+# chaine = "ATATACGGATCGGCTGTTGCCTGCGTAGTAGCGT"
+#
+# print(calc_composition(chaine))
+#ceci va donner des tuples
+
+
+#exercice 3
+
+#Conversion codes à 3 lettres au code à une lettre
+
+# liste = ["Ala","Arg","Asn","Asp","Cys","Glu","Gln","Gly","His","Ile","Leu","Lys","Met","Phe","Pro","Ser","Thr","Trp","Tyr","Val"]
+#
+# listeprime = ["A","R","N","D","C","E","Q","G","H","I","L","K","M","F","P","S","T","W","Y","V"]
+#
+# chaine = "ALA GLY GLU ARG TRP TYR SER GLY ALA TRP"
+#
+# for i in range(len(liste)) :
+#     liste[i] = liste[i].upper()
+#
+# print(liste)
+# print(len(liste) == len(listeprime))
+# print(chaine)
+# for j in range(len(liste)) :
+#     if chaine.find(liste[j]) != -1 :
+#         chaine = chaine.replace(liste[j],listeprime[j])
+#         print(chaine)
+# print(chaine)
+
+
+#exercice 4
+
+#distance de hamming
+
+# def calc_distancedehamming(liste1,liste2) :
+#     c = 0
+#     for i in range(len(liste1)) :
+#         if liste2[i] != liste1[i] :
+#              c = c + 1
+#     return  c
+#
+# chaine1 = "AGWPSGGASAGLAIL"
+# chaine2 = "IGWPSAGASAGLWIL"
+# chaine3 = "ATTCATACGTTACGATT"
+# chaine4 = "ATACTTACGTAACCATT"
+#
+# print(calc_distancedehamming(chaine4,chaine3))
+# print(calc_distancedehamming(chaine1,chaine2))
+
+#exercice 5
+
+#palindrome
+
+# def is_palindrome(chaine) :
+#     return chaine == "".join(reversed(chaine.split()))
+#
+# print(is_palindrome("paap"))
+
+#exercice 7
+
+#pangramme
+
+# def get_alphabet() :
+#     chaine = ""
+#     for i in range(97,123) :
+#         chaine = chaine + chr(i)
+#     return chaine
+#
+# print(get_alphabet())
+#
+# def pangramme(chaine) :
+#     for i in get_alphabet() :
+#         if chaine.count(i) > 0 :
+#             return False
+#     return True
+#
+# print(pangramme("dgjklazazopiuezytyqmslkdjhgfwxxxxxxxxxxncb"))
+
+#exercice 8
+
+#exercice 9
+
+#exercice 10
+
+
+
+#chapitre 11 PLUS SUR LES LISTES
+
+#exercice 1
+
+#tri d'une liste
+
+# def croiss(liste) :
+#     list = []
+#     r = liste[:]
+#     for i in range(len(liste)) :
+#         list.append(min(r))
+#         r.remove(list[-1])
+#     return list
+# maliste = [8, 3, 12.5, 45, 25.5, 52, 1]
+# print("la liste {} trié correspond à {}".format(maliste,croiss(maliste)))
+
+#exercice 2
+
+#Séquence nucléique aléatoire
+
+# import random
+# def gen_seq_alea(n) :
+#     liste = ["A","C","G","T","U"]
+#     l = []
+#     for i in range(n) :
+#         l.append(random.choice(liste))
+#     return l
+#
+# print(gen_seq_alea(20))
+
+
+#chapitre 13 : DICTIONNAIRE ET TUPLE
+
+#exercice 1
+
+#composition des acides aminés
+
+# seq = "AGWPSGGASAGLAILWGASAIMPGALW"
+#
+# dictionnaire  = {}
+# for acide in seq:
+#     dictionnaire[acide] = seq.count(acide)
+# print(dictionnaire)
+
+
+#exercice 2
+
+#Mots de deux lettres
+
+# seq = "ACCTAGCCATGTAGAATCGCCTAGGCTTTAGCTAGCTCTAGCTAGCTG"
+# dictionnaire  = {}
+#
+# for i in range(len(seq)//2) :
+#     acide = seq[i:i+2]
+#     dictionnaire[acide] = seq.count(acide)
+#
+# print(dictionnaire)
+
+
+#exercice 3
+
+#Mots de trois à quatre lettre
+
+# seq = "ACCTAGCCATGTAGAATCGCCTAGGCTTTAGCTAGCTCTAGCTAGCTG"
+# dictionnaire  = {}
+#
+# for i in range(len(seq)//3) :
+#     acide = seq[i:i+3]
+#     dictionnaire[acide] = seq.count(acide)
+#
+# print(dictionnaire)
+
+# seq = "ACCTAGCCATGTAGAATCGCCTAGGCTTTAGCTAGCTCTAGCTAGCTG"
+# dictionnaire  = {}
+#
+# for i in range(len(seq)//4) :
+#     acide = seq[i:i+4]
+#     dictionnaire[acide] = seq.count(acide)
+#
+# print(dictionnaire)
+
+
+
+#exercice 4
+
+#Mots de 2 lettres de Saccharomyces cerevisiae
+
+
+#############################################modules d'interets ###########################################"""""""""""
+
+#Mathplotlib
+
+# import math
+# import matplotlib.pyplot as plt
+#
+# temps = [1, 2, 3, 4, 6, 7, 9]
+# o = math.pi
+# concentration = [5.5, 7.2, 11.8, 13.6, 19.1, 21.7, 29.4]
+#
+# plt.scatter(temps, concentration, marker='o', color = 'blue')
+#
+# plt.xlabel("Temps (h)")
+# plt.ylabel("Concentration (mg/L)")
+# plt.title("Concentration de produit en fonction du temps")
+# plt.show()
+
+#------------------------module à importer------------------------------------------------------#
+import numpy as np
+
+#---------------------------Lecture du fichier PDB-----------------------------------------------#
+
+n = 0
+
+with open("1bta.pdb","r") as fichier1, open("1bta_CA.txt","w") as fichier2 :
+    for ligne in fichier1 :
+        champ = ligne.split()
+        if champ[0] == "ATOM" and champ[2] == "CA" :
+            fichier2.write("{} {} {}\n".format(champ[7],champ[8],champ[9]))
+            n = n + 1
+
+print("Le nombre de coordonnées est de {} ".format(n))
+
+#--------------------------Lecture du ficher coordonnees et creation de liste--------------------#
+
+maliste = []
+
+with open("1bta_CA.txt","r") as fichier2 :
+    for ligne in fichier2 :
+        champ = ligne.split()
+        maliste.append(champ)
+
+print(maliste)
+
+#-----------------------------construction d'un array---------------------------------------------#
+
+mliste = np.array(maliste)
+mliste = mliste.reshape(2)
+print(mliste.size())
+
+
+#---------------grosse incompréhesion-----------------------#
+
+
+
+#
