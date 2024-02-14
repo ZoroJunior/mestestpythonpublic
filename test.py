@@ -735,41 +735,107 @@ import time
 # plt.show()
 
 #------------------------module à importer------------------------------------------------------#
-import numpy as np
+# import numpy as np
+#
+# #---------------------------Lecture du fichier PDB-----------------------------------------------#
+#
+# n = 0
+#
+# with open("1bta.pdb","r") as fichier1, open("1bta_CA.txt","w") as fichier2 :
+#     for ligne in fichier1 :
+#         champ = ligne.split()
+#         if champ[0] == "ATOM" and champ[2] == "CA" :
+#             fichier2.write("{} {} {}\n".format(champ[7],champ[8],champ[9]))
+#             n = n + 1
+#
+# print("Le nombre de coordonnées est de {} ".format(n))
+#
+# #--------------------------Lecture du ficher coordonnees et creation de liste--------------------#
+#
+# maliste = []
+#
+# with open("1bta_CA.txt","r") as fichier2 :
+#     for ligne in fichier2 :
+#         champ = ligne.split()
+#         maliste.append(champ)
+#
+# print(maliste)
+#
+# #-----------------------------construction d'un array---------------------------------------------#
+#
+# mliste = np.array(maliste)
+# mliste = mliste.reshape(2)
+# print(mliste.size())
+#
+#
+# #---------------grosse incompréhesion-----------------------#
 
-#---------------------------Lecture du fichier PDB-----------------------------------------------#
-
-n = 0
-
-with open("1bta.pdb","r") as fichier1, open("1bta_CA.txt","w") as fichier2 :
-    for ligne in fichier1 :
-        champ = ligne.split()
-        if champ[0] == "ATOM" and champ[2] == "CA" :
-            fichier2.write("{} {} {}\n".format(champ[7],champ[8],champ[9]))
-            n = n + 1
-
-print("Le nombre de coordonnées est de {} ".format(n))
-
-#--------------------------Lecture du ficher coordonnees et creation de liste--------------------#
-
-maliste = []
-
-with open("1bta_CA.txt","r") as fichier2 :
-    for ligne in fichier2 :
-        champ = ligne.split()
-        maliste.append(champ)
-
-print(maliste)
-
-#-----------------------------construction d'un array---------------------------------------------#
-
-mliste = np.array(maliste)
-mliste = mliste.reshape(2)
-print(mliste.size())
 
 
-#---------------grosse incompréhesion-----------------------#
+#Exercice chapitre 19 Oriente objet
 
+#exercice 1
 
+#classe rectangle
 
+# class Rectangle :
+#
+#     def __init__(self,long = 0.0,larg = 0.0, couleur = "blanc") :
+#         self.long = long
+#         self.larg = larg
+#         self.couleur = couleur
+#
+#     def calcPerimetre(self) :
+#         return 2*(self.long + self.larg)
+#
+# rect = Rectangle(1,1,"blanc")
+#
+# print(rect.calcPerimetre())
+
+#exercice2
+
+#classe Atome
+
+# import math
+#
+# class Atom :
+#
+#     def __init__(self,x = 0.0,y = 0.0,z = 0.0) :
+#         self.x = x
+#         self.y = y
+#         self.z = z
+#
+#     def calc_distance(self):
+#         return math.sqrt(self.x*self.x+self.y*self.y+self.z*self.z)
+#
+# unAtome = Atom(3.0,5.0,8.0)
+#
+# print(unAtome.calc_distance())
+
+#exercice3
+
+#class Atome ameliore
+
+# import math
+#
+# class Atom :
+#
+#     def __init__(self,x = 0.0,y = 0.0,z = 0.0,masse = 0,numero_atomique = 0) :
+#         self.x = x
+#         self.y = y
+#         self.z = z
+#         self.masse = masse
+#         self.numero_atomique = numero_atomique
+#
+#     def calc_distance(self):
+#         return math.sqrt(self.x*self.x+self.y*self.y+self.z*self.z)
+#
+#     def calc_centre_masse(self):
+#         """"
+#         Ici un code mais je conais pas le centre de masse d'un atome
+#         """
+#
+# unAtome = Atom(3.0,5.0,8.0)
+#
+# print(unAtome.calc_distance())
 #
